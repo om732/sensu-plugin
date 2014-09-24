@@ -56,13 +56,14 @@ class JvmMemoryMetrics < Sensu::Plugin::Metric::CLI::Graphite
     
     timestamp = params[:timestamp]
     heap_memory_usage = params[:value][:used]
+    heap_memory_max   = params[:value][:max]
     
-    if heap_memory_usage > config[:critical]
-      critical "MEM Critical #{heap_memory_usage}"
-    elsif heap_memory_usage > config[:warning]
-      warning "MEM Warning #{heap_memory_usage}"
+    if heap_memory_usage > config[:critical].to_i
+      critical "MEM Critical #{heap_memory_usage} / #{heap_memory_max}"
+    elsif heap_memory_usage > config[:warning].to_i
+      warning "MEM Warning #{heap_memory_usage} / #{heap_memory_max}"
     else
-      ok "MEM OK #{heap_memory_usage}"
+      ok "MEM OK #{heap_memory_usage} / #{heap_memory_max}"
     end
     
   end
