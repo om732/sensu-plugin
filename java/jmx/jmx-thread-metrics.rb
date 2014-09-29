@@ -10,7 +10,7 @@ require 'sensu-plugin/metric/cli'
 require "rest-client"
 require "time"
 
-class JmxThreadCountMetrics < Sensu::Plugin::Metric::CLI::Graphite
+class JmxThreadMetrics < Sensu::Plugin::Metric::CLI::Graphite
   option :url,
     :short => '-u url',
     :long => '--url url',

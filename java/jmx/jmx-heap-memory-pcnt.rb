@@ -8,7 +8,7 @@
 require "rubygems"
 require 'sensu-plugin/check/cli'
 
-class JmxHeapMemory < Sensu::Plugin::Check::CLI
+class JmxHeapMemoryPcnt < Sensu::Plugin::Check::CLI
   option :url,
     :short => '-u url',
     :long => '--url url',
