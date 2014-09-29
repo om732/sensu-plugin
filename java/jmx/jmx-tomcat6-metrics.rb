@@ -47,7 +47,7 @@ class JmxHeapMemoryMetrics < Sensu::Plugin::Metric::CLI::Graphite
   
   def run
     if !config[:name]
-        critical "name is required."
+        unknown "name is required."
     end
     
     script_path = File.expand_path(File.dirname($0))
