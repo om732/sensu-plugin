@@ -10,7 +10,7 @@ require 'sensu-plugin/metric/cli'
 require "rest-client"
 require "time"
 
-class JmxHeapMemoryMetrics < Sensu::Plugin::Metric::CLI::Graphite
+class JmxTomcat6Metrics < Sensu::Plugin::Metric::CLI::Graphite
   option :url,
     :short => '-u url',
     :long => '--url url',
@@ -20,7 +20,7 @@ class JmxHeapMemoryMetrics < Sensu::Plugin::Metric::CLI::Graphite
   option :scheme,
     :description => "Metric naming scheme",
     :long => "--scheme SCHEME",
-    :default => "#{Socket.gethostname}.Memory"
+    :default => "#{Socket.gethostname}.java"
   
   option :name,
     :short => '-n name',

@@ -20,7 +20,7 @@ class JmxHeapMemoryMetrics < Sensu::Plugin::Metric::CLI::Graphite
   option :scheme,
     :description => "Metric naming scheme",
     :long => "--scheme SCHEME",
-    :default => "#{Socket.gethostname}.Memory"
+    :default => "#{Socket.gethostname}.java"
     
   def exec_jmx_client(script_path, url, name)
     return `java -jar #{script_path}/cmdline-jmxclient-0.10.3.jar - #{url} java.lang:type=Memory #{name} 2>&1`
